@@ -64,10 +64,10 @@ const Reset = (props) =>{
                         <form onSubmit={handleSubmit}>
                             <div className="card-body">
                                 <div className="form-group mb-3">
-                                    <input type="text" className="form-control" placeholder="Введите новый пароль" onChange={e => setPass1(e.target.value)} value={pass1} />
+                                    <input type="password" className="form-control" placeholder="Введите новый пароль" onChange={e => setPass1(e.target.value)} value={pass1} />
                                 </div>
                                 <div className="form-group">
-                                    <input type="text" className="form-control" placeholder="Подтвердите новый пароль" onChange={e => setPass2(e.target.value)} value={pass2} />
+                                    <input type="password" className="form-control" placeholder="Подтвердите новый пароль" onChange={e => setPass2(e.target.value)} value={pass2} />
                                 </div>
                             </div>
                             <div className="text-center mt-3 mb-3">
