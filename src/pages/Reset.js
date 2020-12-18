@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './Reset.css';
 
 const Reset = (props) =>{
-    const [isLinkVerified, setIsLinkVerified] = useState(false);
+    const [isLinkVerified, setIsLinkVerified] = useState(true);
     const [pass1, setPass1] = useState('');
     const [pass2, setPass2] = useState('');
     const urlUid = props.match.params.uid;
@@ -20,12 +20,13 @@ const Reset = (props) =>{
             })
         }).then(response => response.json())
         .then(res =>{
-            if(res.token){
+            if(res.token && res.uidb64){
                 console.log('Success')
                 setIsLinkVerified(true)
+            }else{
+                setIsLinkVerified(false)
             }
         }).catch(err =>{
-            console.log("Failed");
             setIsLinkVerified(false)
         })
     }, [urlUid, urlToken]);
