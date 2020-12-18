@@ -28,7 +28,7 @@ const Reset = (props) =>{
             console.log("Failed");
             setIsLinkVerified(false)
         })
-    }, []);
+    }, [urlUid, urlToken]);
 
     const handleSubmit = e =>{
         e.preventDefault();
